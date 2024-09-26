@@ -10,7 +10,7 @@ const PDFModal: React.FC<NavbarProps> = ({ pdfUrl }) => {
       src={pdfUrl}
       width="100%"
       height="600px"
-      style={{ border: 'none' }}
+      style={{ border: 'none', borderRadius: '10px' }}
       title="PDF Viewer"
     />
   );

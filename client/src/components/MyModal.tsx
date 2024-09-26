@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { Dialog, DialogContent, DialogTitle, IconButton } from '@mui/material';
+import { Backdrop, Dialog, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface NavbarProps {
@@ -17,7 +17,15 @@ const MyModal: React.FC<NavbarProps> = ({ open, handleClose, children }) => {
       onClose={handleClose}
       maxWidth="lg"
       fullWidth
-      sx={{ backgroundColor: 'rgba(17, 25, 40, 0.5)', backdropFilter: "blur(7px) saturate(120%)", color: "white" }}
+      PaperProps={{
+        sx: {
+          backgroundColor: 'rgba(17, 25, 40, 0.5)',
+          backdropFilter: "blur(7px) saturate(120%)",
+          color: "white",
+          padding: '20px',
+          borderRadius: '15px'
+        }
+      }}
     >
       <DialogTitle>
         <IconButton
@@ -25,7 +33,7 @@ const MyModal: React.FC<NavbarProps> = ({ open, handleClose, children }) => {
           color="inherit"
           onClick={handleClose}
           aria-label="close"
-          style={{ position: 'absolute', right: 8, top: 8 }}
+          style={{ position: 'absolute', right: 20, top: 5 }}
         >
           <CloseIcon />
         </IconButton>
