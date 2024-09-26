@@ -1,5 +1,4 @@
 import {
-  Mail,
   MoreVert,
   Notifications,
   SearchRounded,
@@ -61,22 +60,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
   },
 }));
 
-const Navbar = () => {
+interface NavbarProps {
+  filter: string
+  setFilter: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({filter, setFilter}) => {
   const [open, setOpen] = useState(false);
 
   return (
     <AppBar>
       <StyledToolbar>
-        <Stack direction="row" spacing={2} mr={2} alignItems="center">
+        <Stack direction="row" spacing={2} alignItems="center">
           <WebStories />
           <Typography
             variant="h6"
@@ -85,16 +83,20 @@ const Navbar = () => {
             E Books
           </Typography>
         </Stack>
-        <Search>
-          <SearchIconWrapper>
-            <SearchRounded />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
-        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ flexGrow: 1, mx: 10 }}>
+          <Search>
+            <SearchIconWrapper>
+              <SearchRounded />
+            </SearchIconWrapper>
+            <StyledInputBase
+              value={filter}
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+              onChange={e => {setFilter(e.target.value)}}
+              sx={{width: '100%'}}
+            />
+          </Search>
+        </Box>
         <Stack
           direction="row"
           spacing={1}
@@ -145,7 +147,7 @@ const Navbar = () => {
       >
         <MenuItem>Profile</MenuItem>
         <MenuItem>My account</MenuItem>
-        <MenuItem >Logout</MenuItem>
+        <MenuItem>Logout</MenuItem>
       </Menu>
     </AppBar>
   );
