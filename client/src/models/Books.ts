@@ -9,6 +9,7 @@ export const testBooks: IBook[] = [
     pages: 328,
     genre: "Dystopian",
     createdAt: new Date(),
+    imageUrl: "https://anylang.net/sites/default/files/covers/1984.jpg"
   },
   {
     title: "To Kill a Mockingbird",
@@ -18,6 +19,7 @@ export const testBooks: IBook[] = [
     pages: 281,
     genre: "Southern Gothic, Bildungsroman",
     createdAt: new Date(),
+    imageUrl: "https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UF1000,1000_QL80_.jpg"
   },
   {
     title: "The Great Gatsby",
@@ -27,6 +29,7 @@ export const testBooks: IBook[] = [
     pages: 180,
     genre: "Tragedy",
     createdAt: new Date(),
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg"
   },
   {
     title: "Moby Dick",
@@ -36,6 +39,7 @@ export const testBooks: IBook[] = [
     pages: 635,
     genre: "Adventure, Epic",
     createdAt: new Date(),
+    imageUrl: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781681778488/moby-dick-9781681778488_hr.jpg"
   },
   {
     title: "Pride and Prejudice",
@@ -45,5 +49,6 @@ export const testBooks: IBook[] = [
     pages: 279,
     genre: "Romantic fiction",
     createdAt: new Date(),
+    imageUrl: "https://s3.amazonaws.com/adg-bucket/pride-and-pejudice-jane-austen/3425-medium.jpg"
   },
 ];

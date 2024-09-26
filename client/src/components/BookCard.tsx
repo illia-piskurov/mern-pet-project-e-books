@@ -12,7 +12,7 @@ const BookCard: React.FC<{ book: IBook; onEdit: () => void; onDelete: () => void
       <CardMedia
         component="img"
         height="200"
-        image="https://anylang.net/sites/default/files/covers/1984.jpg"
+        image={book.imageUrl}
         alt={`${book.title} cover`}
         sx={{opacity: 0.9}}
       />

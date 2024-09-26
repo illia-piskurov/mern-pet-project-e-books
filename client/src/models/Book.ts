@@ -6,4 +6,5 @@ export interface IBook {
     pages?: number;
     genre?: string;
     createdAt?: Date;
+    imageUrl?: string;
 }
