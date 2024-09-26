@@ -9,7 +9,8 @@ export const testBooks: IBook[] = [
     pages: 328,
     genre: "Dystopian",
     createdAt: new Date(),
-    imageUrl: "https://anylang.net/sites/default/files/covers/1984.jpg"
+    imageUrl: "https://anylang.net/sites/default/files/covers/1984.jpg",
+    downloadUrl: "https://rauterberg.employee.id.tue.nl/lecturenotes/DDM110%20CAS/Orwell-1949%201984.pdf"
   },
   {
     title: "To Kill a Mockingbird",
@@ -19,7 +20,8 @@ export const testBooks: IBook[] = [
     pages: 281,
     genre: "Southern Gothic, Bildungsroman",
     createdAt: new Date(),
-    imageUrl: "https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UF1000,1000_QL80_.jpg"
+    imageUrl: "https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UF1000,1000_QL80_.jpg",
+    downloadUrl: "https://www.raio.org/TKMFullText.pdf"
   },
   {
     title: "The Great Gatsby",
@@ -29,7 +31,8 @@ export const testBooks: IBook[] = [
     pages: 180,
     genre: "Tragedy",
     createdAt: new Date(),
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg"
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg",
+    downloadUrl: "https://www.planetebook.com/free-ebooks/the-great-gatsby.pdf"
   },
   {
     title: "Moby Dick",
@@ -39,7 +42,8 @@ export const testBooks: IBook[] = [
     pages: 635,
     genre: "Adventure, Epic",
     createdAt: new Date(),
-    imageUrl: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781681778488/moby-dick-9781681778488_hr.jpg"
+    imageUrl: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781681778488/moby-dick-9781681778488_hr.jpg",
+    downloadUrl: "https://uberty.org/wp-content/uploads/2015/12/herman-melville-moby-dick.pdf"
   },
   {
     title: "Pride and Prejudice",
@@ -49,6 +53,7 @@ export const testBooks: IBook[] = [
     pages: 279,
     genre: "Romantic fiction",
     createdAt: new Date(),
-    imageUrl: "https://s3.amazonaws.com/adg-bucket/pride-and-pejudice-jane-austen/3425-medium.jpg"
+    imageUrl: "https://s3.amazonaws.com/adg-bucket/pride-and-pejudice-jane-austen/3425-medium.jpg",
+    downloadUrl: "https://www.gutenberg.org/files/1342/old/pandp12p.pdf"
   },
 ];

@@ -46,7 +46,7 @@ const BookCard: React.FC<{ book: IBook; onEdit: () => void; onDelete: () => void
         <Stack direction="row" spacing={1} sx={{ marginTop: 2 }}>
           <IconButton
             color="secondary"
-            onClick={() => { }} // @TODO
+            onClick={() => { window.open(book.downloadUrl, "_blank") }}
             sx={{ borderRadius: '50%', bgcolor: 'rgba(255, 255, 255, 0.5)', '&:hover': { bgcolor: 'action.selected' } }}
           >
             <GetApp />
