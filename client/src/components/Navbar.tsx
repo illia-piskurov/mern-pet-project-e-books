@@ -72,7 +72,8 @@ const Navbar: React.FC<NavbarProps> = ({filter, setFilter}) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar>
+    <AppBar
+      sx={{ backgroundColor: 'rgba(17, 25, 40, 0.5)', backdropFilter: "blur(8px) saturate(180%)", height: '64px'}}>
       <StyledToolbar>
         <Stack direction="row" spacing={2} alignItems="center">
           <WebStories />

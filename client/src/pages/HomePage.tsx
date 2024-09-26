@@ -11,8 +11,7 @@ const HomePage: React.FC = () => {
   }, [filter, testBooks])
 
   return (
-    <Container>
-      <Typography variant="h2">E-books</Typography>
+    <Container sx={{ marginTop: '64px', paddingBottom: '14px' }}>
       <Navbar filter={filter} setFilter={setFilter}></Navbar>
       <Grid container spacing={2} sx={{ marginTop: 2 }}>
         {filteredBooks.map((book, index) => (
