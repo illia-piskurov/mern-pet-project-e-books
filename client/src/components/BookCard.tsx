@@ -6,9 +6,11 @@ import { GetApp } from '@mui/icons-material';
 import { IBook } from "../models/Book";
 
 
-const BookCard: React.FC<{ book: IBook; onEdit: () => void; onDelete: () => void }> = ({ book, onEdit, onDelete }) => {
+const BookCard: React.FC<{ book: IBook; onEdit: () => void; onDelete: () => void; onClick: () => void;}> = ({ book, onEdit, onDelete, onClick }) => {
   return (
-    <Card sx={{backgroundColor: 'rgba(17, 25, 40, 0.5)', backdropFilter: "blur(7px) saturate(120%)", color: "white"}}>
+    <Card
+      onClick={onClick} 
+      sx={{backgroundColor: 'rgba(17, 25, 40, 0.5)', backdropFilter: "blur(7px) saturate(120%)", color: "white"}}>
       <CardMedia
         component="img"
         height="200"
