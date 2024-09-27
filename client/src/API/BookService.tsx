@@ -34,8 +34,9 @@ export default class BookService {
     }
   };
 
-  static async updateBook(id: string, updatedBook: Partial<IBook>): Promise<IBook> {
+  static async updateBook(updatedBook: IBook): Promise<IBook> {
     try {
+      const id = updatedBook._id;
       const response = await axios.put<IBook>(`${API_URL}/${id}`, updatedBook);
       return response.data;
     } catch (error) {
