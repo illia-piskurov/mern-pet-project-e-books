@@ -6,7 +6,14 @@ import { GetApp } from '@mui/icons-material';
 import { IBook } from "../models/Book";
 
 
-const BookCard: React.FC<{ book: IBook; onEdit: () => void; onDelete: () => void; onClick: () => void;}> = ({ book, onEdit, onDelete, onClick }) => {
+interface BookCardProps {
+  book: IBook; 
+  onEdit: () => void;
+  onDelete: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick: () => void;
+}
+
+const BookCard: React.FC<BookCardProps> = ({ book, onEdit, onDelete, onClick }) => {
   return (
     <Card
       onClick={onClick} 

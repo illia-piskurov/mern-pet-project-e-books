@@ -2,27 +2,25 @@ import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 
 interface DeleteConfirmationModalProps {
-  open: boolean;
-  onClose: () => void;
   onConfirm: () => void;
 }
 
-const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({ open, onClose, onConfirm }) => {
+const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({ onConfirm }) => {
   return (
-    <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Подтверждение удаления</DialogTitle>
-      <DialogContent>
-        <Typography>Вы действительно хотите удалить эту книгу?</Typography>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={onClose} color="primary">
-          No
-        </Button>
-        <Button onClick={onConfirm} color="error">
+    <div>
+      <DialogTitle>Are you confirming the deletion?</DialogTitle>
+      <DialogTitle color="error">The record will be permanently deleted</DialogTitle>
+        <Button
+          onClick={onConfirm}
+          color="error"
+          sx={{
+            border: 'solid',
+            borderColor: 'white',
+            marginLeft: '20px'
+          }}>
           Yes
         </Button>
-      </DialogActions>
-    </Dialog>
+    </div>
   );
 };
 

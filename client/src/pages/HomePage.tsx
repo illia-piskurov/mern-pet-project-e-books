@@ -1,10 +1,12 @@
 import React, { useMemo, useState } from 'react';
-import { Container, Typography, Button, Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import Navbar from '../components/Navbar';
 import BookCard from '../components/BookCard';
 import { testBooks } from '../models/Books';
 import PDFModal from '../components/pdfModal';
 import MyModal from '../components/MyModal';
+import DeleteConfirmationModal from '../components/DeleteConfiramtionModal';
+
 
 const HomePage: React.FC = () => {
   const [filter, setFilter] = useState('');
@@ -34,8 +36,16 @@ const HomePage: React.FC = () => {
             <BookCard 
               book={book}
               onEdit={() => { }}
-              onDelete={() => { }}
-              onClick={() => {openModal(<PDFModal pdfUrl={book.downloadUrl}></PDFModal>)}} />
+              onDelete={(e) => {
+                e.stopPropagation();
+                openModal(
+                  <DeleteConfirmationModal
+                    onConfirm={() => {}}
+                  />)
+              }}
+              onClick={() => {
+                openModal(<PDFModal pdfUrl={book.downloadUrl}></PDFModal>)
+              }} />
           </Grid>
         ))}
       </Grid>
