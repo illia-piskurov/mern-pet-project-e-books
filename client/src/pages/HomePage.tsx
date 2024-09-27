@@ -8,6 +8,7 @@ import MyModal from '../components/MyModal';
 import DeleteConfirmationModal from '../components/DeleteConfiramtionModal';
 import EditBookModal from '../components/EditBookModal';
 import { IBook } from '../models/Book';
+import AddBookCard from '../components/AddBookCard';
 
 
 const HomePage: React.FC = () => {
@@ -35,24 +36,32 @@ const HomePage: React.FC = () => {
       <Grid container spacing={2} sx={{ marginTop: 2 }}>
         {filteredBooks.map((book, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <BookCard 
+            <BookCard
               book={book}
               onEdit={(e) => {
                 e.stopPropagation();
                 openModal(<EditBookModal
                   book={book}
-                  onSave={(book) => {console.log(book)}}
+                  onSave={(book) => { console.log(book) }}
                 />)
               }}
               onDelete={(e) => {
                 e.stopPropagation();
-                openModal(<DeleteConfirmationModal onConfirm={() => {}}/>)
+                openModal(<DeleteConfirmationModal onConfirm={() => { }} />)
               }}
               onClick={() => {
                 openModal(<PDFModal pdfUrl={book.downloadUrl}></PDFModal>)
               }} />
           </Grid>
         ))}
+        <Grid item xs={12} sm={6} md={4} key="addbook">
+          <AddBookCard onAdd={() => {
+            openModal(<EditBookModal
+              book={{title: "", author: "", description: "", publishDate: "", pages: 0, genre: "", imageUrl: "", downloadUrl: ""}}
+              onSave={(book) => { console.log(book) }}
+            />)
+          }}/>
+        </Grid>
       </Grid>
       <MyModal open={open} handleClose={handleClose}>
         {modalContent}
