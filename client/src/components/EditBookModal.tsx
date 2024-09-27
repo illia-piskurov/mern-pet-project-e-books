@@ -32,7 +32,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ onSave, book }) => {
         <TextField
           autoFocus
           margin="dense"
-          label="Название"
+          label="Title"
           type="text"
           fullWidth
           variant="outlined"
@@ -42,7 +42,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ onSave, book }) => {
         />
         <TextField
           margin="dense"
-          label="Автор"
+          label="Author"
           type="text"
           fullWidth
           variant="outlined"
@@ -52,7 +52,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ onSave, book }) => {
         />
         <TextField
           margin="dense"
-          label="Описание"
+          label="Description"
           type="text"
           fullWidth
           variant="outlined"
@@ -62,17 +62,17 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ onSave, book }) => {
         />
         <TextField
           margin="dense"
-          label="Дата публикации"
-          type="date"
+          label="Publish Date"
+          type="text"
           fullWidth
           variant="outlined"
           value={bookData.publishDate}
-          onChange={(e) => setBookData({ ...bookData, publishDate: new Date(e.target.value) })}
+          onChange={(e) => setBookData({ ...bookData, publishDate: e.target.value })}
           slotProps={slotProps}
         />
         <TextField
           margin="dense"
-          label="Количество страниц"
+          label="Pages"
           type="number"
           fullWidth
           variant="outlined"
@@ -82,12 +82,32 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ onSave, book }) => {
         />
         <TextField
           margin="dense"
-          label="Жанр"
+          label="Genre"
           type="text"
           fullWidth
           variant="outlined"
           value={bookData.genre}
           onChange={(e) => setBookData({ ...bookData, genre: e.target.value })}
+          slotProps={slotProps}
+        />
+        <TextField
+          margin="dense"
+          label="Image Source"
+          type="text"
+          fullWidth
+          variant="outlined"
+          value={bookData.imageUrl}
+          onChange={(e) => setBookData({ ...bookData, imageUrl: e.target.value })}
+          slotProps={slotProps}
+        />
+        <TextField
+          margin="dense"
+          label="PDF Source"
+          type="text"
+          fullWidth
+          variant="outlined"
+          value={bookData.downloadUrl}
+          onChange={(e) => setBookData({ ...bookData, downloadUrl: e.target.value })}
           slotProps={slotProps}
         />
       </DialogContent>
