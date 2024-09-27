@@ -13,11 +13,8 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({ onCon
         <Button
           onClick={onConfirm}
           color="error"
-          sx={{
-            border: 'solid',
-            borderColor: 'white',
-            marginLeft: '20px'
-          }}>
+          sx={{backgroundColor: 'rgba(255, 255, 255, 0.1)', marginLeft: '20px'}}
+        >
           Yes
         </Button>
     </div>

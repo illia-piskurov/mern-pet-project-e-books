@@ -8,7 +8,7 @@ import { IBook } from "../models/Book";
 
 interface BookCardProps {
   book: IBook; 
-  onEdit: () => void;
+  onEdit: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onDelete: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onClick: () => void;
 }

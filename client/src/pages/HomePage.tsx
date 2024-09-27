@@ -6,6 +6,8 @@ import { testBooks } from '../models/Books';
 import PDFModal from '../components/pdfModal';
 import MyModal from '../components/MyModal';
 import DeleteConfirmationModal from '../components/DeleteConfiramtionModal';
+import EditBookModal from '../components/EditBookModal';
+import { IBook } from '../models/Book';
 
 
 const HomePage: React.FC = () => {
@@ -35,13 +37,16 @@ const HomePage: React.FC = () => {
           <Grid item xs={12} sm={6} md={4} key={index}>
             <BookCard 
               book={book}
-              onEdit={() => { }}
+              onEdit={(e) => {
+                e.stopPropagation();
+                openModal(<EditBookModal
+                  book={book}
+                  onSave={(book) => {console.log(book)}}
+                />)
+              }}
               onDelete={(e) => {
                 e.stopPropagation();
-                openModal(
-                  <DeleteConfirmationModal
-                    onConfirm={() => {}}
-                  />)
+                openModal(<DeleteConfirmationModal onConfirm={() => {}}/>)
               }}
               onClick={() => {
                 openModal(<PDFModal pdfUrl={book.downloadUrl}></PDFModal>)

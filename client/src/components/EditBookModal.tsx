@@ -1,19 +1,33 @@
-import React from 'react';
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from '@mui/material';
+import React, { useState } from 'react';
+import { DialogTitle, DialogContent, DialogActions, Button, TextField } from '@mui/material';
 import { IBook } from '../models/Book';
 
+
 interface EditBookModalProps {
-  open: boolean;
-  onClose: () => void;
-  onSave: (data: IBook) => void;
-  bookData: IBook;
-  setBookData: React.Dispatch<React.SetStateAction<IBook>>;
+  onSave: (book: IBook) => void;
+  book: IBook;
 }
 
-const EditBookModal: React.FC<EditBookModalProps> = ({ open, onClose, onSave, bookData, setBookData }) => {
+const EditBookModal: React.FC<EditBookModalProps> = ({ onSave, book }) => {
+  const [bookData, setBookData] = useState<IBook>(book);
+
+  const slotProps = {
+    input: {
+      style: {
+        color: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      },
+    },
+    inputLabel: {
+      style: {
+        color: 'white',
+      }
+    },
+  };
+
   return (
-    <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Редактировать книгу</DialogTitle>
+    <div>
+      <DialogTitle>Edit metainforamtion</DialogTitle>
       <DialogContent>
         <TextField
           autoFocus
@@ -24,6 +38,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ open, onClose, onSave, bo
           variant="outlined"
           value={bookData.title}
           onChange={(e) => setBookData({ ...bookData, title: e.target.value })}
+          slotProps={slotProps}
         />
         <TextField
           margin="dense"
@@ -33,6 +48,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ open, onClose, onSave, bo
           variant="outlined"
           value={bookData.author}
           onChange={(e) => setBookData({ ...bookData, author: e.target.value })}
+          slotProps={slotProps}
         />
         <TextField
           margin="dense"
@@ -42,6 +58,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ open, onClose, onSave, bo
           variant="outlined"
           value={bookData.description}
           onChange={(e) => setBookData({ ...bookData, description: e.target.value })}
+          slotProps={slotProps}
         />
         <TextField
           margin="dense"
@@ -51,6 +68,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ open, onClose, onSave, bo
           variant="outlined"
           value={bookData.publishDate}
           onChange={(e) => setBookData({ ...bookData, publishDate: new Date(e.target.value) })}
+          slotProps={slotProps}
         />
         <TextField
           margin="dense"
@@ -60,6 +78,7 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ open, onClose, onSave, bo
           variant="outlined"
           value={bookData.pages}
           onChange={(e) => setBookData({ ...bookData, pages: parseInt(e.target.value) })}
+          slotProps={slotProps}
         />
         <TextField
           margin="dense"
@@ -69,17 +88,15 @@ const EditBookModal: React.FC<EditBookModalProps> = ({ open, onClose, onSave, bo
           variant="outlined"
           value={bookData.genre}
           onChange={(e) => setBookData({ ...bookData, genre: e.target.value })}
+          slotProps={slotProps}
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose} color="primary">
-          Discard
-        </Button>
-        <Button onClick={() => onSave(bookData)} color="primary">
+        <Button onClick={() => onSave(bookData)} color="primary" sx={{backgroundColor: 'rgba(255, 255, 255, 0.1)'}}>
           Save
         </Button>
       </DialogActions>
-    </Dialog>
+    </div>
   );
 };
 
