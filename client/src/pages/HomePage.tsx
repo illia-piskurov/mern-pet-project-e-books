@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
               book={book}
               onEdit={() => { }}
               onDelete={() => { }}
-              onClick={() => {openModal(<PDFModal pdfUrl='https://www.gutenberg.org/files/1342/old/pandp12p.pdf'></PDFModal>)}} />
+              onClick={() => {openModal(<PDFModal pdfUrl={book.downloadUrl}></PDFModal>)}} />
           </Grid>
         ))}
       </Grid>

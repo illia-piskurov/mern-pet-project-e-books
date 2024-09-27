@@ -43,7 +43,7 @@ export const testBooks: IBook[] = [
     genre: "Adventure, Epic",
     createdAt: new Date(),
     imageUrl: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781681778488/moby-dick-9781681778488_hr.jpg",
-    downloadUrl: "https://uberty.org/wp-content/uploads/2015/12/herman-melville-moby-dick.pdf"
+    downloadUrl: "https://clasesinglesvalencia.com/wp-content/uploads/2018/01/Ingles-para-intermediario-moby-dick.pdf"
   },
   {
     title: "Pride and Prejudice",
