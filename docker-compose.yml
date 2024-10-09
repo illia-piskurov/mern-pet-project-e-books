@@ -31,7 +31,7 @@ services:
     container_name: server
     restart: always
     ports:
-      - "5000:5000"
+      - "${BACKEND_PORT}:3001"
     environment:
       MONGO_URL: mongodb://mongodb:27017/your_database_name
     depends_on:
@@ -45,7 +45,7 @@ services:
     container_name: client
     restart: always
     ports:
-      - "3000:3000"
+      - "${FRONTEND_PORT}:3000"
     depends_on:
       - server
     command: ["npm", "run", "start"]
